@@ -14,7 +14,16 @@ spec:
     spec:
       containers:
       -  name: kubelab-api
-         image: kubelab-api:1.0
+         image: kubelab-api:1.1
          imagePullPolicy: Never
          ports:
          - containerPort: 8000
+         readinessProbe:
+           httpGet:
+             path: /health
+             port: 8000
+         livenessProbe:
+           httpGet:
+             path: /health
+             port: 8000
+
