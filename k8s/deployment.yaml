@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubelab-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubelab-api
+  template:
+    metadata:
+      labels:
+        app: kubelab-api
+    spec:
+      containers:
+      -  name: kubelab-api
+         image: kubelab-api:1.0
+         imagePullPolicy: Never
+         ports:
+         - containerPort: 8000
