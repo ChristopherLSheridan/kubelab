@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -9,3 +10,7 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
+
+@app.get("/environment")
+def environment():
+    return {"environment": os.getenv("APP_ENV", "unknown")}

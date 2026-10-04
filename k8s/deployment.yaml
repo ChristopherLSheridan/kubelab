@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       -  name: kubelab-api
-         image: kubelab-api:1.1
+         image: kubelab-api:1.2
          imagePullPolicy: Never
          ports:
          - containerPort: 8000
@@ -26,6 +26,9 @@ spec:
            httpGet:
              path: /health
              port: 8000
+         envFrom:
+         - configMapRef:
+             name: kubelab-api-config
          resources:
            requests:
              cpu: 100m
