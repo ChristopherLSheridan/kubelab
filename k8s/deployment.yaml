@@ -29,6 +29,8 @@ spec:
          envFrom:
          - configMapRef:
              name: kubelab-api-config
+         - secretRef:
+             name: kubelab-api-secret
          resources:
            requests:
              cpu: 100m
