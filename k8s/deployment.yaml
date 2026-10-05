@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       -  name: kubelab-api
-         image: kubelab-api:1.9
+         image: kubelab-api:1.11
          imagePullPolicy: Never
          ports:
          - containerPort: 8000
