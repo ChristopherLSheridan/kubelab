@@ -5,3 +5,7 @@ metadata:
   namespace: kubelab
 data:
   APP_ENV: "development"
+  POSTGRES_HOST: "postgres"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "kubelab"
+  POSTGRES_USER: "kubelab"
